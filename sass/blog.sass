@@ -1,0 +1,144 @@
+@import 'variables'
+
+.blog-header-bg
+	z-index: 0
+	&::after
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(255, 255, 255, .5)
+		z-index: -1
+a
+	// color: $orange //customizer.php
+.wrap-blog
+	padding: 2%
+	float: left
+	width: 100%
+.sidebar
+	padding: 2%
+	margin-top: 9%
+	z-index: 0
+	&::after
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(255, 255, 255, .8)
+		z-index: -1
+article.post
+	background-color: $white
+	// background-image: url(../images/map_bg2.png)
+.search-submit:before
+	content: "\f002"
+	font-family: FontAwesome
+.page-header
+	border-top-color: transparent
+.entry-date
+	// color: $orange // customizer.php
+
+.sticky .entry-title
+	&:after
+		color: $black
+.entry-title
+	z-index: 0
+	&:after
+		position: absolute
+		content: "\eb31"
+		font-family: icofont
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+		color: #EFEFEF
+		font-size: 9em
+		z-index: -1
+	a
+		font-family: 'Oswald', sans-serif
+	// a:hover, 
+	// a:focus,
+	// 	color: $orange //customizer.php
+
+body:not(.search-results) article:not(.type-page) .entry-content
+	width: 90%
+.entry-content
+	padding: 4%
+	z-index: 0
+	// box-shadow: 0 0 0 10px $orange, 0 0 0 20px $very-light-grey //customizer.php
+	transition: all .5s
+	background-color: $white
+	// .entry-content-bg
+	// 	// background-color: $orange // cutomizer.php
+	// 	position: absolute
+	// 	width: 102%
+	// 	height: 96%
+	// 	transform: rotate(-2.1deg)
+	// 	top: 4px
+	// 	left: -8px
+	// 	z-index: -1
+	// 	transition: all .5s
+.entry-content:hover
+	// box-shadow: 0 0 0 10px $very-light-grey, 0 0 0 20px $orange //customizer.php
+	.entry-content-bg
+		transform: rotate(2.1deg)
+		background-color: $black
+
+.sticky
+	.entry-title
+		background-color: $orange
+		padding: 2%
+		a
+			color: $white
+			transition: all .6s
+		a:hover
+			color: $light-grey
+	.icofont-tack-pin
+		font-size: 3rem
+
+
+.post-thumbnail
+	width: 150px
+	&::after
+		content: ""
+		position: absolute
+		// background-color: $orange // customizer.php
+		width: 108%
+		height: 100%
+		transform: rotate(2.1deg)
+		top: 0
+		left: -6px
+		z-index: -1
+		transition: all .5s
+.post-thumbnail:hover
+	&::after
+		background-color: $grey
+		transform: rotate(-2.1deg)
+
+// .comment-reply-link,
+// .comment-reply-link:hover, 
+// .comment-reply-link:focus
+// 	color: $orange // customizer.php
+
+.pagination .prev,
+.pagination .next
+	transition: all .5s
+// .pagination .prev:hover, 
+// .pagination .prev:focus, 
+// .pagination .next:hover, 
+// .pagination .next:focus
+// 	background-color: $orange // customizer.php
+.pagination .next:before
+	content: "\f061"
+	font-family: FontAwesome
+.pagination .prev:before
+	content: "\f060"
+	font-family: FontAwesome
+
+.pagination .nav-links:before,
+.pagination .nav-links:after
+	content: "\f141"
+	font-family: FontAwesome
+

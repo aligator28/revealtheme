@@ -1,0 +1,10 @@
+#wp-content-media-buttons,
+#ed_toolbar, 
+#mceu_33, 
+#mceu_26 {
+	display: none;
+}
+.mce-edit-area {
+	padding-top: 0 !important;
+}
+

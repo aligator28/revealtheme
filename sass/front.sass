@@ -1,0 +1,705 @@
+@import "common"
+
+.not-found
+	display: block
+	text-align: center
+	color: $light_red
+	z-index: 1
+	width: 100%
+	background-color: rgba(255, 255, 255, .8)
+	padding: 5% 0
+	a
+		text-decoration: underline
+///////////////////////////// page header //////////////////////////////////////////
+.contact__info .contact__info-heading p .icofont
+	color: $black
+.search-form-container
+	position: absolute
+	right: 80px
+	height: 42px
+	top: calc(50% - 21px)
+	z-index: 9999
+	.search-field
+		background: transparent
+		border-color: $black
+		transition: background 1.2s
+	.search-field::-webkit-input-placeholder
+		opacity: 1
+		color: $black
+		transition: opacity .6s
+	.search-field::-moz-placeholder
+		opacity: 1
+		color: $black
+		transition: opacity .6s
+	.search-field::-moz-placeholder
+		opacity: 1
+		color: $black
+		transition: opacity .6s
+	.search-field::-ms-input-placeholder
+		opacity: 1
+		color: $black
+		transition: opacity .6s
+	.search-field::-ms-input-placeholder
+		opacity: 0
+	.search-field:focus::-moz-placeholder
+		opacity: 0
+	.search-field:focus::-webkit-input-placeholder
+		opacity: 0
+	.search-form .search-field
+		opacity: 0
+		transition: opacity .6s
+	.search-form:hover .search-field
+			opacity: 1
+
+
+embed, iframe, object, video
+	margin-bottom: 0
+.video-container
+	&::after
+		content: ""
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background-color: rgba(0, 0, 0, .7)
+		z-index: 1
+	.video-title
+		position: absolute
+		width: 60%
+		color: $white
+		font-size: 10em
+		font-size: 10vh
+		+center(20%, 20%)
+		z-index: 2
+	.video-blockquote
+		position: absolute
+		color: $white
+		font-size: 4em
+		font-size: 4vh
+		+center(70%, 80%)
+		// border-left: 3px solid $orange // in customizer.php
+		z-index: 2
+.fullscreen-video
+	min-height: 100%
+	min-width: 100%
+	// aspect ratio
+	width: auto
+	height: auto
+	z-index: 1
+.fullscreen-video.mobile
+	width: 100%
+	height: 300px
+	height: 50vh
+.front-header-bg
+	width: 100%
+	height: 100vh
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+
+.entry-header.page,
+.entry-content.page
+	margin: 0
+
+.front-socials-item
+	border-right: 2px solid $light-grey
+	text-align: center
+	background-repeat: no-repeat
+	background-size: contain
+	background-position: center
+	z-index: 2
+	&:nth-child(2n+1)
+		border-right: none
+
+.front-socials-item.youtube
+	background-image: url(../images/socials/youtube.png)
+	height: 50px
+.front-socials-item.facebook
+	background-image: url(../images/socials/facebook.png)
+	height: 43px
+.front-socials-item.twitter
+	background-image: url(../images/socials/twitter.png)
+	height: 43px
+.front-socials-item.instagram
+	background-image: url(../images/socials/instagram.png)
+	height: 70px
+
+.fa-share-alt
+	font-size: 3em
+	// color: $orange // customizer.php
+	transition: all .5s
+
+.front-socials-btn
+	position: absolute
+	background-color: $white
+	+center(50%, 50%)
+	top: 0
+	width: 100px
+	height: 100px
+	text-align: center
+	border-radius: 50%
+	// border-right: 2px solid $orange // this is in cusmtomizer.php
+	border-left: 2px solid $black
+	background-color: rgba(249, 249, 249, .4)
+	z-index: 2
+	.front-socials-container
+		position: absolute
+		+center(50%, 50%)
+		z-index: 2
+	&:hover 
+		.fa-share-alt
+			transform: rotate(360deg)
+			color: $light-grey
+
+.page-section
+	margin-top: 15%
+	padding-top: 5%
+
+
+.section-main-title
+	text-align: center
+	font-size: 3em
+	font-size: 6vh
+	margin: 0 auto
+	padding-top: 2%
+	padding-bottom: 1%
+	width: 100%
+	z-index: 1
+	&::after
+		content: "\eb31"
+		position: absolute
+		font-family: icofont
+		+center(50%, 50%)
+		color: $very-light-grey
+		font-size: 9em
+		// margin-top: 5%
+		z-index: -1
+.page-section-features
+	padding: 0 30px
+	margin-top: 20%
+	.features-row
+		padding-top: 7%
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-around
+
+.features-item-icon
+	width: 80px
+	height: 80px
+	background-color: $very-light-grey
+	border-radius: 50%
+	border: 3px solid $very-light-orange
+	box-shadow: 0 0 0 10px $white, 0 0 0 11px $very-light-orange
+	padding: 20px
+	transition: all .5s
+	i
+		position: absolute
+		+center(50%, 50%)
+		color: $black
+		font-size: 3em
+		transition: all .5s
+
+.features-item
+	z-index: 1
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-around
+	align-items: center
+	width: 48%
+	height: 25vh
+	background-color: $white
+	border: 10px solid $very-light-grey
+	margin: 10px
+	padding: 10px
+	transition: all .5s
+	&:hover 
+		border: 10px solid transparent
+		// box-shadow: 0 0 0 20px $white, 0 0 0 60px $orange // customizer.php
+		z-index: 2
+		.features-item-icon
+			border: 10px solid $very-light-grey
+			// box-shadow: 0 0 0 20px $white, 0 0 0 60px $very-light-orange // customizer.php
+			background-color: $very-light-grey
+			i
+				// color: $orange // customizer.php
+.features-item-title
+	font-size: 2rem
+	
+.features-more-link
+	position: absolute
+	bottom: 20px
+	right: 20px
+	text-decoration: underline
+	color: $orange
+	transition: color .5s
+	&:hover
+		color: $black
+////////////////////////////////// OVERVIEW
+// .overview
+// 	background-color: $orange // customizer.php
+section.overview
+	overflow: hidden
+	// background: linear-gradient(to bottom, $orange 0%, $orange 16%, #fff 16%, rgba(255,255,255,1) 100%)
+	&::before //bottom black triangle
+		content: ""
+		position: absolute
+		display: block
+		height: 0
+		width: 2vw
+		bottom: -3px
+		left: -10vw
+		z-index: 0
+		border-width: 10vh 60vw
+		// border-color: transparent transparent $black transparent // customizer.php
+		border-style: solid
+		z-index: 2
+.overview-title
+	width: 100%
+	// background-color: $orange // customizer.php
+	padding: 10% 0 9%
+	margin: 0 auto
+
+.row-overview
+	margin-top: 0
+	padding: 20% 0
+	height: 150%
+	height: 150vh
+	overflow: hidden
+	background:
+		// image: url(../images/overview_bg.png)
+		size: cover
+		attachment: fixed
+		repeat: no-repeat
+	&::after
+		content: ""
+		position: absolute
+		top: 0
+		height: 200%
+		width: 100%
+		z-index: 1
+		background-color: rgba(255,255,255,.3)
+	&::before //up triangle
+		content: ""
+		position: absolute
+		display: block
+		height: 0
+		top: 0
+		z-index: 2
+		border-width: 15vh 50vw
+		// border-color: #fff transparent transparent transparent // customizer.php
+		border-style: solid
+	div[class^="col"].overview-content
+		// margin-top: 160px
+		// margin-top: 17vh
+		// +center(50%, 50%)
+		z-index: 2
+		.slider-title
+			padding: 20px 50px
+			background-color: rgba(255,255,255,.8)
+	.slider-list
+		padding: 10% !important
+		background-color: rgba(255,255,255,.8)
+		font-family: Oswald, sans-serif
+		font-size: 3vh
+
+
+
+/////////////////////////// PLANS SECTION
+section.plans
+	// background-color: $black // customizer.php
+	margin-top: 0
+	padding-top: 10%
+	padding-bottom: 10%
+	.plans-title
+		color: $white
+		// &::after
+			// color: $orange // customizer.php
+
+.bottom-skew
+	height: 150px
+	width: 100%
+	overflow: hidden
+	position: absolute
+	bottom: -149px
+	z-index: 2
+	&::after
+		content: ""
+		display: block
+		width: 102%
+		height: 150px
+		// background-color: $black // customizer.php
+		position: absolute
+		bottom: 45%
+		z-index: 2
+		transform: rotate(3deg)
+.contacts-bottom
+	&::after
+		// background-color: #fff // customizer.php
+		transform: rotate(3deg)
+
+.pricelist-row
+	padding-top: 7%
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-around
+.pricelist-container
+	margin: 5% auto
+.pricelist-item
+	display: flex
+	flex-direction: column
+	align-items: center
+
+	list-style: none
+	background-color: $white
+	width: 25vw
+	height: 100%
+	padding: 1% 2% 2%
+	overflow: hidden
+	&::before //up triangle
+		content: ""
+		position: absolute
+		display: block
+		height: 0
+		width: 2vw
+		top: 0
+		left: -17.5vw
+		z-index: 0
+		border-width: 15vh 30vw
+		//border-color: $orange transparent transparent transparent // customizer.php
+		border-style: solid
+	.pricelist-item-title
+		text-align: center
+		color: $white
+
+.popular-product-label
+	position: absolute
+	font-size: 30px
+	font-size: 3.5vh
+	font-family: Oswald,sans-serif
+	color: $light_red
+	left: -25px
+	top: -30px
+	border: 1px dashed $light_red
+	transform: rotate(-20deg)
+	padding: 0 15px
+	z-index: 1
+.popular-product
+	background-color: $very-light-grey
+	&::before
+		border-color: $dark_red transparent transparent transparent
+.pricelist-item-price
+	margin-top: 20%
+	text-align: center
+	font-size: 5vh
+.reg-price-strike
+	text-decoration: line-through
+	font-size: .8em
+	text-align: center
+.sale-price-item
+	color: $dark_red
+
+.pricelist-item-content
+	padding: 10%
+.pricelist-item-button
+	display: flex
+	flex: 1
+	align-items: flex-end
+	.pricelist-item-button_button
+		padding: 0
+		.add_to_cart_button
+			display: inline-block
+			padding: 10px 50px
+			transition: all .5s
+			text-transform: none
+			font-size: 18px
+			font-family: Oswald, sans-serif
+			&:hover
+				color: $white
+				// background-color: $orange // customizer.php
+		.added_to_cart
+			padding-right: 25px
+
+
+// FREQUENTLY ASKED QUESTIONS
+.questions
+	margin-top: 0
+	padding-bottom: 30%
+	padding-top: 25%
+	background-repeat: no-repeat
+	background-attachment: fixed
+	background-position: center
+	background-size: cover
+	overflow: hidden
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		background-color: rgba(0,0,0,.5)
+		z-index: 1
+.questions-bottom
+	position: absolute
+	bottom: -5px
+	height: 350px
+	&::after
+		content: ""
+		display: block
+		width: 105%
+		height: 350px
+		// background-color: $orange // customizer.php
+		position: absolute
+		bottom: -55px
+		left: -10px
+		z-index: 2
+		transform: rotate(3deg)
+
+.questions-title
+	color: $white
+	width: 100%
+	margin-bottom: 2%
+	// &::after
+		// color: $orange // customizer.php
+
+
+
+.accordion  
+	width: 80%
+	margin: 0 auto 5%
+	// background-color: rgba(255,255,255,.5)
+	padding: 2% 4% 4%
+	z-index: 1
+	dt
+		border-bottom: 1px solid $black
+		cursor: pointer
+		padding: 8px 15px
+		background-color: rgba(255,255,255,.5)//$white
+		margin: 0
+		transition: all .5s
+		&:hover
+			// background-color: $orange // customizer.php
+			color: $white
+		&:before  
+			content: "\25B6" 
+			padding-right: 5px
+		&.accordion-active
+			background-color: rgba(0,0,0,.5)//$black
+			color: $white
+			transition: all .5s
+			+ dd
+				background-color: rgba(255,255,255,.9)//$very-light-grey
+			&:before  
+				content: "\25BE" 
+				padding-right: 5px
+			&:hover  
+				cursor: default
+				background-color: rgba(220,220,220,.5)//$light-grey
+				color: $black
+	dd  
+		display: none 
+		padding: 20px
+		margin-bottom: 0
+		// border-bottom: 1px solid #DDD 
+.contacts
+	margin-top: 10%
+	// background-color: $white //customizer.php
+.contacts-item
+	text-align: center
+	p
+		font-size: 1.5rem
+		font-weight: 600
+		// color: $orange // customizer.php
+.contact-icon
+	margin: 20px auto
+	width: 100px
+	height: 100px
+	border-radius: 50%
+	//background-color: $orange // customizer.php
+	border: 7px solid #fff
+	//box-shadow: 0 0 0 3px $orange, 0 0 0 10px #fff, 0 0 0 11px $orange // customizer.php
+	.icofont
+		color: $white
+		position: absolute
+		+center(50%, 50%)
+		font-size: 35px
+
+.contact-form
+	// background-color: $orange // customizer.php
+	padding-top: 5%
+	margin-top: 0
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		// background-color: rgba(255,255,255,.2)
+.contact-form-title
+	margin-top: -15%
+	z-index: 2
+	
+.contact-form-bottom
+	overflow: hidden
+	height: 150px
+	height: 15vh
+	bottom: -15vh
+	&::before
+		content: ""
+		position: absolute
+		display: block
+		height: 0
+		top: 0
+		left: -10vw
+		z-index: 2
+		border-width: 150px
+		border-width: 15vh 60vw
+		border-style: solid
+		// border-color: $orange transparent transparent transparent // customizer.php
+
+.contact-form-bg
+	position: absolute
+	+center(50%, 50%)
+	overflow: hidden
+	width: 100%
+	height: 100%
+	i
+		position: absolute
+		top: -300px
+		font-size: 100vw
+		color: rgba(255,255,255,.1)
+
+.contact-form-content
+	width: 60%
+	margin: 5% auto
+	z-index: 1
+
+.wpcf7-form
+	.wpcf7-form-control
+		border-radius: 0
+		border: none
+	label
+		color: $white
+		font-weight: 600
+	p:last-of-type
+		text-align: right
+	.wpcf7-submit
+		padding: 10px 100px
+		background-color: rgba(0,0,0,.1)
+		border: 2px solid $white
+		text-transform: none
+		font-family: Oswald, sans-serif
+		font-size: 1.5rem
+		transition: all .5s
+div.wpcf7-mail-sent-ok,
+div.wpcf7-validation-errors
+	border-color: $white !important
+div.wpcf7-mail-sent-ok
+	background-color: rgba(255,255,255,.8)
+div.wpcf7-validation-errors
+	background-color: rgba(247,231,0,.6)
+
+
+.download-title
+	margin-bottom: 10%
+.download-bages
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-around
+	align-items: center
+	
+	position: relative
+	margin: 0 auto
+	width: 100%
+	background-color: rgba(255,255,255,.5)
+.download-content
+	width: 80%
+	padding: 5% 0
+	+center(50%, 50%)
+	p
+		color: $white
+.download-content-bg
+	height: 100vh
+	background:
+		repeat: no-repeat
+		position: center
+		size: cover
+		attachment: fixed
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 0
+		background-color: rgba(0,0,0,.5)
+
+.map-section
+	margin-top: 0
+	padding-top: 20%
+	padding-bottom: 0
+	margin-bottom: 0
+	background-color: $black
+	background:
+		repeat: no-repeat
+		size: cover
+		position: center
+.map-title
+	color: $black
+	padding: 5% 0 20%
+	margin-bottom: 0
+	&:after
+		top: 25%
+
+.footer-section
+	background:
+		image: url(../images/footer_bg.png)
+		size: cover
+		repeat: no-repeat
+		position: 100% 0
+		color: $white
+	margin-bottom: 0
+	padding-bottom: 0
+	padding-top: 25%
+	
+.footer-section-content p
+	color: $white
+
+.footer-socials
+	background-color: rgba(255,255,255,.8)
+	padding: 10%
+
+.footer-section-bottom
+	width: 100%
+	color: $white
+	// background-color: $orange // customizer.php
+	.row
+	    padding-bottom: 2%
+	.contacts-item
+		p
+			font-size: 1rem
+			font-weight: normal
+			color: $white
+	.contact-icon
+		width: 60px
+		height: 60px
+		border-width: 3px
+		// box-shadow: 0 0 0 7px #ff4b14, 0 0 0 11px #fff, 0 0 0 11px #ff4b14; // customizer.php
+		.icofont
+			font-size: 25px
+
+.footer-section-copy
+	position: absolute
+	bottom: 0
+	text-align: center
+	width: 100%
+	margin: 0
+	background-color: rgba(0, 0, 0, .8)
+	padding: 10px
+
+
+
+@import 'media'

@@ -1,0 +1,11 @@
+05.03.17
+
+- added Theme options to style Blog and Shop pages
+- fixed styles of Blog and Shop pages
+- added continous loop
+
+13.03.17
+
+- fixed bug in admin dashboard: filter by category, date, type of product
+- added possibility to insert external video for slides (Youtube, Vimeo, etc.)
+- autoplay video possibility added

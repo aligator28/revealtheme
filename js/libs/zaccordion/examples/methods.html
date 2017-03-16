@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<!-- zAccordion Methods Examples -->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script src="../js/jquery.zaccordion.js"></script>
+		<link rel="stylesheet" type="text/css" href="examples.css"/>
+	</head>
+
+	<body>
+		<div id="container">
+			<h1>zAccordion Methods Examples</h1>
+			<p>There are a number of examples below.  For JavaScript, HTML, and CSS, please view the page source.</p>
+
+			<div id="examples">
+				<h2>Example 1 - <code>trigger</code></h2>
+
+				<ul id="example1">
+					<li>
+						<img src="../images/slide0.gif" width="600" height="270" alt="" />
+					</li>
+					<li>
+						<img src="../images/slide1.gif" width="600" height="270" alt="" />
+					</li>
+					<li>
+						<img src="../images/slide2.gif" width="600" height="270" alt="" />
+					</li>
+					<li>
+						<img src="../images/slide3.gif" width="600" height="270" alt="" />
+					</li>
+					<li>
+						<img src="../images/slide4.gif" width="600" height="270" alt="" />
+					</li>
+				</ul>
+
+				<script>
+					/*jslint sloppy: true, white: true */
+					/*globals $, document*/
+
+					$(document).ready(function () {
+						var exampleEl = $("#example1"),
+							navigationEl;
+
+						navigationEl = $('<ul/>')
+							.insertAfter(exampleEl);
+
+						$('<a href="#">Trigger slide 3.</a>')
+							.click(function (e) {
+								e.preventDefault();
+								exampleEl.zAccordion('trigger', 2);  //Pass an integer...
+							})
+							.appendTo(navigationEl)
+							.wrap('<li/>');
+
+						$('<a href="#">Trigger slide 5.</a>')
+							.click(function (e) {
+								e.preventDefault();
+								exampleEl.zAccordion('trigger', '4');  //...Or a string
+							})
+							.appendTo(navigationEl)
+							.wrap('<li/>');
+
+						exampleEl
+							.zAccordion({
+								auto: false,  //Disable the (automatic) slideshow
+								slideWidth: 600,
+								width: 960,
+								height: 270
+							});
+					});
+				</script>
+			</div>
+		</div>
+	</body>
+</html>

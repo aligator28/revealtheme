@@ -1,0 +1,40 @@
+// Browser Prefixes
+@mixin transform($transforms) 
+	-webkit-transform: $transforms
+	-moz-transform: $transforms
+	-ms-transform: $transforms
+	transform: $transforms
+
+// Rotate
+@mixin rotate ($deg)  
+	+transform(rotate($deg))
+
+// Scale
+@mixin scale($scale) 
+	+transform(scale($scale))
+
+// Translate
+@mixin translate ($x, $y) 
+	+transform(translate($x, $y))
+
+// Skew
+@mixin skew ($x, $y) 
+	+transform(skew($x, $y))
+
+// Transform Origin
+@mixin transform-origin ($origin) 
+	-webkit-transform-origin: $origin
+	-moz-transform-origin: $origin
+	-ms-transform-origin: $origin
+	transform-origin: $origin
+
+@mixin center($x, $y)
+	left: $x
+	top: $y
+	+translate(-$x, -$y)
+
+@mixin orange_bg_grad($dir, $end_opacity)
+	background-color: rgba(255,75,20,1)
+	background: +filter-gradient(#ff4b14, #e73827, horizontal)
+	background-image: linear-gradient($dir, rgba(255,75,20,1) 0%, rgba(231,56,39, $end_opacity) 100%)
+

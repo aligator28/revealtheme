@@ -1,0 +1,94 @@
+.archive-entry-content,
+.entry-header,
+.entry-title
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 100%
+	height: 100%
+	margin: 0
+	a
+		display: flex
+		align-items: center
+		justify-content: center
+		transition: all .5s
+		width: 100%
+		height: 100%
+	a:hover:after
+		// border-bottom: 1px solid $orange customizer.php
+		width: 100%
+		position: absolute
+		top: 58%
+		left: 0
+.archive-entry-content
+	padding: 2%
+	a:after
+		transition: all 1s
+		content: ""
+		border-bottom: 1px solid transparent
+
+.archive-single-header
+	margin-bottom: 5%
+
+.archive-entry
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin: 0
+	height: 50vh
+	&:hover
+		.archive-right
+			background-color: rgba(255, 75, 20, .1)
+		.archive-left
+			opacity: 1
+		// .entry-title customizer.php
+			// color: $orange
+		// .entry-title a
+			// color: $orange
+	
+
+$archive-width: 50%
+
+.archive-left
+	width: $archive-width
+	height: 100%
+	background:
+		size: cover
+		repeat: no-repeat
+		position: center
+	opacity: .5
+	transition: all .5s
+
+.archive-right
+	width: $archive-width
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: all .5s
+
+.archive-entry-footer
+	margin: 5% auto
+
+
+
+// @media only screen and (max-width : 768px)
+@media only screen and (max-width : 480px)
+	.archive-item
+		display: block
+		width: 100%
+	.archive-left
+		height: 25vh
+	.archive-entry
+		height: 100%
+		margin-bottom: 20%
+		background-image: url(../images/map_bg2.png)
+		// border-bottom: 3px solid $orange customizer.php
+		&:hover
+			.archive-right 
+				.entry-title a
+					color: $white
+	.entry-title a:hover:after
+			top: 90%
+			border-bottom: 1px solid $white !important
+
+// @media only screen and (max-width : 320px)
