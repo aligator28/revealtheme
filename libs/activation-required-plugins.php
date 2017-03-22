@@ -15,7 +15,7 @@ function reveal_register_required_plugins() {
             'required'  => true,
             'force_activation' => true,
             'force_deactivation' => true,
-            'source' => 'https://github.com/aligator28/revealtheme/raw/master/revealthemecustomposttypes.zip',
+            'source' => 'https://codeload.github.com/aligator28/reveal_custom_post_types/zip/master',
             'path'=>'revealthemecustomposttypes/revealthemecustomposttypes.php',
         ),
         array(

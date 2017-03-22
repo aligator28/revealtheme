@@ -224,9 +224,23 @@ function optionsframework_options() {
 	
 /********************************** BLOG-SHOP ****************************************/
 	$options[] = array(
-		'name' => esc_html__( 'Blog and Shop Styles', 'revealpresentation' ),
+		'name' => esc_html__( 'Blog and Shop', 'revealpresentation' ),
 		'type' => 'heading'
 	);
+	$options[] = array(
+		'name' => esc_html__( 'Blog header background image', 'revealpresentation' ),
+		'desc' => esc_html__( 'Paste your blog header background image ', 'revealpresentation' ),
+		'id' => $prefix . 'blog_header_bg_image',
+		'type' => 'upload'
+	);
+	$options[] = array(
+		'name' => esc_html__( 'Blog header blockquote', 'revealpresentation' ),
+		'id' => $prefix . 'blog_blockquote',
+		'type' => 'editor',
+		'std' => esc_html__( 'Any of your business presentation idea, marketing advertizing and tutorial slides are possible', 'revealpresentation' ),
+		'settings' => $wp_editor_settings
+	);
+	
 	$options[] = array(
 		'name' => esc_html__( 'Blog background image', 'revealpresentation' ),
 		'desc' => esc_html__( 'Paste your blog background image ', 'revealpresentation' ),

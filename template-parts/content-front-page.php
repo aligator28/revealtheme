@@ -78,8 +78,13 @@
 
 <section class="page-section page-section-features">
 	<h2 class="section-main-title">
-		<?php if ( !empty( rwmb_meta('reveal_features_title') ) ) 
-		echo esc_html( rwmb_meta('reveal_features_title') ); ?>	
+		<?php 
+			if ( !empty( rwmb_meta('reveal_features_title') ) ) : 
+				echo esc_html( rwmb_meta('reveal_features_title') );
+			else :
+				echo esc_html__('Product Features', 'revealpresentation');
+			endif;
+		?>	
 	</h2>
 
 	<div class="features-row">
@@ -119,8 +124,13 @@
 
 <section class="page-section overview">
 	<h2 class="section-main-title overview-title">
-		<?php if ( !empty( rwmb_meta('reveal_overview_title') ) ) 
-		echo esc_html( rwmb_meta('reveal_overview_title') ); ?>		
+		<?php 
+			if ( !empty( rwmb_meta('reveal_overview_title') ) ) :
+				echo esc_html( rwmb_meta('reveal_overview_title') );
+			else : 
+				echo esc_html__('Overview', 'revealpresentation');
+			endif; 
+		?>		
 	</h2>
 	
 	<?php 
@@ -188,8 +198,13 @@ endwhile;
 
 <section class="page-section plans">
 	<h2 class="section-main-title plans-title">
-	<?php if ( !empty( rwmb_meta('reveal_plans_title') ) ) 
-		echo esc_html( rwmb_meta('reveal_plans_title') ); ?>	
+	<?php 
+		if ( !empty( rwmb_meta('reveal_plans_title') ) ) : 
+			echo esc_html( rwmb_meta('reveal_plans_title') );
+		else :
+			echo esc_html__('Plans', 'revealpresentation');
+		endif;
+	?>	
 	</h2>
 	<?php
 		$args = array(
@@ -300,8 +315,13 @@ endwhile;
 	?> style="background-image: url(<?php echo esc_html( $questions_bg_image ); ?>)">
 
 	<h2 class="section-main-title questions-title">
-	<?php if ( !empty( rwmb_meta('reveal_questions_title') ) ) 
-		echo esc_html( rwmb_meta('reveal_questions_title') ); ?>	
+	<?php 
+		if ( !empty( rwmb_meta('reveal_questions_title') ) ) : 
+			echo esc_html( rwmb_meta('reveal_questions_title') );
+		else :
+			echo esc_html__('Frequently Asked Questions', 'revealpresentation');
+		endif;
+	?>	
 	</h2>
 
 	<dl class="accordion">
@@ -342,11 +362,11 @@ endwhile;
 	<div class="contact-form-bg"><i class="icofont icofont-email"></i></div>
 	<h2 class="section-main-title contact-form-title">
 		<?php 
-		if ( !empty( rwmb_meta('reveal_contact_form_title') ) ) { 
-			echo esc_html( rwmb_meta('reveal_contact_form_title') ); }
-		else {
-				echo esc_html__('Contact Us', 'revealpresentation');
-			}
+			if ( !empty( rwmb_meta('reveal_contact_form_title') ) ) :
+				echo esc_html( rwmb_meta('reveal_contact_form_title') ); 
+			else :
+					echo esc_html__('Contact Us', 'revealpresentation');
+			endif;
 		?>	
 	</h2>
 	<div class="contact-form-content">
@@ -366,8 +386,13 @@ endwhile;
 <section class="row page-section download">
 	<div class="download-bg"></div>
 	<h2 class="section-main-title download-title">
-		<?php if ( !empty( rwmb_meta('reveal_download_title') ) ) 
-		echo esc_html( rwmb_meta('reveal_download_title') ); ?>	
+		<?php 
+			if ( !empty( rwmb_meta('reveal_download_title') ) ) : 
+				echo esc_html( rwmb_meta('reveal_download_title') );
+			else :
+				echo esc_html__('Download, customize & enjoy', 'revealpresentation');
+			endif;
+		?>	
 	</h2>
 	
 	<?php
@@ -413,8 +438,13 @@ endwhile;
 ?>
 <section class="page-section map-section" id="google_map" style="background-image: url(<?php echo esc_html($map_image) ?>)">
 	<h2 class="section-main-title map-title">
-		<?php if ( !empty( rwmb_meta('reveal_find_title') ) ) 
-		echo esc_html( rwmb_meta('reveal_find_title') ); ?>	
+		<?php 
+			if ( !empty( rwmb_meta('reveal_find_title') ) ) : 
+				echo esc_html( rwmb_meta('reveal_find_title') ); 
+			else :
+				echo esc_html__('How to find us', 'revealpresentation');
+			endif;
+		?>	
 	</h2>
 	
 	<div class="map-section-container">

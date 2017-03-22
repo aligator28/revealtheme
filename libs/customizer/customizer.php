@@ -98,13 +98,13 @@ function pluta_customize_register( $wp_customize ) {
 					'control_label' => esc_html__('Header Background Image', 'revealpresentation'),
 					'type' => 'image_upload'
 				],
-				'header_title_color' => [
-					'setting_id' => 'pluta_header_background_color',
-					'control_label' => esc_html__('Header Background Color', 'revealpresentation'),
-					'description' => esc_html__('When Background Image is set you can set not only color, but opacity too. Try to change opacity when Background Image set!', 'revealpresentation'),
-					'default' => 'rgba(255, 75, 20, 0.8)',
-					'type' => 'alpha-color-picker',
-				]
+				// 'header_title_color' => [
+				// 	'setting_id' => 'pluta_header_background_color',
+				// 	'control_label' => esc_html__('Header Background Color', 'revealpresentation'),
+				// 	'description' => esc_html__('When Background Image is set you can set not only color, but opacity too. Try to change opacity when Background Image set!', 'revealpresentation'),
+				// 	'default' => 'rgba(255, 75, 20, 0.8)',
+				// 	'type' => 'alpha-color-picker',
+				// ]
 			]
 		],
 	/***************** front page section ****************************/
@@ -239,22 +239,24 @@ function reveal_styles_skins() {
 
 	$custom_css = '';
 
-	if ( !empty( get_theme_mod('pluta_header_background_color') ) ) {
-		$main_navigation_bg = get_theme_mod('pluta_header_background_color');
-		$custom_css .=
-		".menu-main-navigation-container {
-			background-color: {$main_navigation_bg}
-		}";
-	}
+	// $main_navigation_bg = 'transparent';
+	// if ( !empty( get_theme_mod('pluta_header_background_color') ) ) {
+	// 	$main_navigation_bg = get_theme_mod('pluta_header_background_color');
+	// 	$custom_css .=
+	// 	".menu-main-navigation-container {
+	// 		background-color: {$main_navigation_bg}
+	// 	}";
+	// }
+	$nav_bg_image = get_template_directory_uri().'/images/overview_bg.png';
 	if ( !empty( get_theme_mod('pluta_front_page_bg_image') ) ) {
 		$nav_bg_image = get_theme_mod('pluta_front_page_bg_image');
-		$custom_css .= "
-		.nav {
-			background-image: url('{$nav_bg_image}');
-			background-size: 100% 100%;
-		}
-		";
 	}
+	$custom_css .= "
+	.nav {
+		background-image: url('{$nav_bg_image}');
+		background-size: cover;
+	}
+	";
 	if ( !empty(get_theme_mod('pluta_bg_image') ) ) {
 
 		$bg_image = get_theme_mod('pluta_bg_image');
@@ -277,6 +279,10 @@ function reveal_styles_skins() {
 	color: {$accent_color} !important;
 }
 
+.contact__info-heading .icofont {
+	color: {$accent_color} !important;
+}
+
 .nav__logo-text {
 	color: {$main_background};
 }
@@ -296,6 +302,9 @@ function reveal_styles_skins() {
 
 #top_main_nav li a {
 	color: {$links_color};
+}
+.search-submit:before {
+	color: {$accent_color};
 }
 
 /* BLOG */
@@ -427,16 +436,17 @@ section.overview::before {
 
 
 /* blog */
-/*.entry-content*/
+/*
 .site-main > article {
 	box-shadow: 0 0 0 10px {$accent_color}, 0 0 0 20px #EFEFEF;
 	transition: all .6s;
 	padding: 4%;
 }
-/*.entry-content*/
+
 .site-main > article:hover {
 	box-shadow: 0 0 0 10px #EFEFEF, 0 0 0 20px {$accent_color};
 }
+*/
 .entry-date {
 	color: {$accent_color};
 }

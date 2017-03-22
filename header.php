@@ -63,9 +63,13 @@
 			
 			<!-- logo -->
 			<div class="nav__logo">
-			<?php if ( !empty( of_get_option('reveal_logo_image') ) ) : ?>
-				<img class="nav__logo-image" src="<?php echo esc_html( of_get_option('reveal_logo_image') ) ?> " alt="logo">
-			<?php endif; ?>
+			<?php 
+			$logo_image = get_template_directory_uri().'/images/icon.png';
+			if ( !empty( of_get_option('reveal_logo_image') ) ) {
+				$logo_image = esc_html( of_get_option('reveal_logo_image') );
+			}
+			?>
+			<img class="nav__logo-image" src="<?php echo $logo_image; ?> " alt="logo">
 			<?php if ( !empty( of_get_option('reveal_logo_text') ) && empty( of_get_option('reveal_logo_image') ) ) : ?> 
 				<span class="nav__logo-text">
 				<?php echo esc_html(of_get_option('reveal_logo_text')); ?>
@@ -74,26 +78,37 @@
 			</div>
 			<!-- logo ends -->
 
-			<!-- contact info -->
-			<div class="contact__info">
-				<div class="contact__info-heading">
-					<p><?php if ( !empty( get_theme_mod('reveal_address_setting') ) ) { ?>
-						<i class="icofont icofont-social-google-map"></i>
-						<?php echo esc_html( get_theme_mod('reveal_address_setting') ); } ?></p>
-					
-					<p><?php if ( !empty( get_theme_mod('reveal_phone_setting') ) ) : ?>
-						<i class="icofont icofont-iphone"></i>
-						<?php echo esc_html( get_theme_mod('reveal_phone_setting') ); ?>
-						<!-- <a href="tel:<?php// echo esc_html( get_theme_mod('reveal_phone_setting') );?>" class="contact__info-call-btn">Call Us Now</a> -->
-						<?php endif; ?>
-					</p>
+	<!-- contact info -->
+	<div class="contact__info">
+		<div class="contact__info-heading">
+			<p class="contact-item"><?php 
+			$address = __('Your address', 'revealpresentation');
+			if ( !empty( get_theme_mod('reveal_address_setting') ) ) { 
+				$address = esc_html( get_theme_mod('reveal_address_setting') );
+			}
+			?>
+				<i class="icofont icofont-social-google-map"></i>
+				<?php echo $address;  ?></p>
+			
+			<p class="contact-item"><?php 
+			$phone = '000-000-000';
+			if ( !empty( get_theme_mod('reveal_phone_setting') ) ) {
+				$phone = esc_html( get_theme_mod('reveal_phone_setting') );
+			} ?>
+				<i class="icofont icofont-iphone"></i>
+				<?php echo $phone; ?></p>
 
-					<p><?php if ( !empty( get_theme_mod('reveal_email_setting') ) ) { ?>
-						<i class="icofont icofont-ui-email"></i>
-						<?php echo esc_html( get_theme_mod('reveal_email_setting') ); } ?></p>
-				</div>
-			</div>
-			<!-- contact info ends -->
+			<p class="contact-item"><?php 
+			$email = __('Your email', 'revealpresentation');
+			if ( !empty( get_theme_mod('reveal_email_setting') ) ) {
+			$email = esc_html( get_theme_mod('reveal_email_setting') ); 
+			} ?>
+				<i class="icofont icofont-ui-email"></i>
+				<?php echo $email; ?></p>
+		</div>
+	</div>
+	<!-- contact info ends -->
+
 		<?php
 				wp_nav_menu( array(
 					'theme_location'  => $theme_location,

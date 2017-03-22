@@ -3,7 +3,7 @@ function reveal_pluta_scripts() {
 	$theme_dir = get_template_directory_uri();//get_stylesheet_directory_uri();
 
 // styles
-if ( is_front_page() ) {
+if ( is_front_page() && !is_home() ) {
 	wp_enqueue_style( 'reveal_zaccordion_css', $theme_dir . '/css/zaccordion.css', array() );
 	wp_register_script( 'reveal_front_end_js', $theme_dir . '/js/front-end.js', array('jquery'), '3.7.3', '1.0', true );
 	wp_enqueue_script( 'reveal_front_end_js' );

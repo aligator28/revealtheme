@@ -12,7 +12,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : the_post_thumbnail_url( 'large' ); else: echo get_template_directory_uri().'/images/overview_bg.png'; endif; ?>')">
 	<?php
 		if ( is_sticky() && is_home() ) :
 	?>
@@ -41,29 +41,10 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
-		<div class="post">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'medium' ); ?>
-			</a>
-		</div><!-- .post-thumbnail -->
-	<?php endif; ?>
-
 	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'revealpresentation' ),
-				get_the_title()
-			) );
-
-			wp_link_pages( array(
-				'before'      => '<div class="page-links">' . __( 'Pages:', 'revealpresentation' ),
-				'after'       => '</div>',
-				'link_before' => '<span class="page-number">',
-				'link_after'  => '</span>',
-			) );
-	// <!-- <div class="entry-content-bg"></div> -->
+		<?php 
+			// $content = get_the_content();
+			// echo wp_trim_words( strip_shortcodes( $content ), '15', $more = '...' );
 		?>
 	</div><!-- .entry-content -->
 

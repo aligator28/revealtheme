@@ -1,6 +1,77 @@
 ( function( $ ) {
 	"use strict";
 
+// var vasya = { 
+//  name: "Вася", 
+//  age: 23 
+//  };
+// var masha = { 
+//  name: "Маша",
+//  age: 18 
+//  };
+// var vovochka = { 
+//  name: "Вовочка",
+//  age: 6 
+//  };
+
+// var people = [ vasya , masha , vovochka ];
+
+// // функция для сортировки по возрастанию
+// function acsSort(a, b) {
+//   return parseInt(a.age, 10) - parseInt(b.age, 10);
+// }
+// // функция для сортировки по убыванию
+// function descSort(a, b) {
+//   return parseInt(b.age, 10) - parseInt(a.age, 10);
+// }
+
+// // сортируем по убыванию
+// people.sort(descSort);
+
+// // просто выводим понятные сообщения
+// console.log('Сортировка по убыванию');
+// for (var i = 0; i < people.length; i++) {
+// 	console.log(people[i].name + ' - ' + people[i].age);
+// }
+
+// // сортируем по возрастанию
+// people.sort(acsSort);
+// // просто выводим понятные сообщения
+// console.log('Сортировка по возрастанию');
+// for (var i = 0; i < people.length; i++) {
+// 	console.log(people[i].name + ' - ' + people[i].age);
+// }
+
+
+
+// function compaireNum(a,b) {
+//  return a - b;
+// }
+
+// var hum = [];
+// var counter = [];
+
+
+// function sortPeople (arr) {
+//  for(var i = 0; i < people.length; i++) {
+//   hum[i] = people[i].age;
+//   counter = i;
+//  }
+//  hum.sort(compaireNum);
+// }
+// function newPeople(arr) {
+//  while (counter == 3) {
+//   people[i] = [counter];
+//  }
+//  console.log(people);
+// }
+
+
+
+
+
+
+
 
 // preloader
 $('.cssload-wrap').fadeOut('slow');

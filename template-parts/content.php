@@ -22,12 +22,12 @@
 	<?php //twentysixteen_post_thumbnail(); ?>
 
 	<div class="entry-content">
+
 		<?php
 			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'revealpresentation' ),
-				get_the_title()
-			) );
+			// the_content( sprintf(
+			// 	__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'revealpresentation' ), get_the_title()
+			// ) );
 
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'revealpresentation' ) . '</span>',
