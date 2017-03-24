@@ -113,7 +113,6 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
     var cur_id = event.currentSlide.id;
 
 	cur_id == '' ? cur_id = 'section1' : cur_id = cur_id;
-		// console.log(current_menu.attr('title') + " = " + cur_id);
 
 	// var fsv = $('#' + cur_id + ' #fullscreen-video');
 	// fsvMove(fsv);
@@ -133,6 +132,49 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 
 	current_menu.parent('li.menu-item').addClass('menu-item-active');
 } );
+
+
+
+
+
+/************************** autoplay video **************************/
+// do not allow to autoplay all videos at once
+var all_iframes = $('.iframe');
+all_iframes.each( function(index) {
+	var iframes_src = $(this).attr('src');
+	iframes_src = iframes_src.concat('&autoplay=0');
+	$(this).attr('src', iframes_src);
+} );
+
+
+// check for autoplay for just loaded slide
+var currSlide = Reveal.getCurrentSlide();
+var currIframe = $('#iframe-' + currSlide.id);
+
+if ( currIframe.attr('data-autoplay') == '1' ) {
+	setVideoAutoplay(currIframe);
+}
+
+Reveal.addEventListener( 'slidechanged', function( event ) {
+	var cur_id = event.currentSlide.id;
+	var video = $('#fullscreen-video-' + cur_id);
+
+	var currIframe = $('#iframe-' + cur_id);
+	if ( currIframe.attr('data-autoplay') == '1' ) {
+		setVideoAutoplay(currIframe);
+	}
+} );
+
+function setVideoAutoplay(currIframe) {
+
+	var currIframeSrc = currIframe.attr('src');
+	currIframeSrc = currIframeSrc.replace('autoplay=0', 'autoplay=1');
+
+	currIframe.attr({'src': currIframeSrc});
+}
+/************************** autoplay video ends **************************/
+
+
 
 function fsvMove(fsv) {
 

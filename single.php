@@ -13,7 +13,7 @@ get_header(); ?>
 <div class="breadcrumbs"><?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(' &raquo; '); ?></div>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main">
+	<main id="main" class="site-main site-main-single">
 		<?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
@@ -31,17 +31,18 @@ get_header(); ?>
 				the_post_navigation( array(
 					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'revealpresentation' ),
 				) );
-			} elseif ( is_singular( 'post' ) ) {
-				// Previous/next post navigation.
-				the_post_navigation( array(
-					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'revealpresentation' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Next post:', 'revealpresentation' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'revealpresentation' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Previous post:', 'revealpresentation' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-				) );
 			}
+			// elseif ( is_singular( 'post' ) ) {
+			// 	// Previous/next post navigation.
+			// 	the_post_navigation( array(
+			// 		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'revealpresentation' ) . '</span> ' .
+			// 			'<span class="screen-reader-text">' . __( 'Next post:', 'revealpresentation' ) . '</span> ' .
+			// 			'<span class="post-title">%title</span>',
+			// 		'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'revealpresentation' ) . '</span> ' .
+			// 			'<span class="screen-reader-text">' . __( 'Previous post:', 'revealpresentation' ) . '</span> ' .
+			// 			'<span class="post-title">%title</span>',
+			// 	) );
+			// }
 
 			// End of the loop.
 		endwhile;
@@ -49,8 +50,23 @@ get_header(); ?>
 
 	</main><!-- .site-main -->
 </div><!-- .content-area -->
-	<?php get_sidebar( 'content-bottom' ); ?>
+<?php get_sidebar(); ?>
 </div><!-- .wrap -->
 
-<?php get_sidebar(); ?>
+
+<div class="posts-navigation">
+<?php
+	if ( is_singular( 'post' ) ) {
+		// Previous/next post navigation.
+		the_post_navigation( array(
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'revealpresentation' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Next post:', 'revealpresentation' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'revealpresentation' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Previous post:', 'revealpresentation' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+		) );
+	}
+?>
+</div>
 <?php get_footer(); ?>

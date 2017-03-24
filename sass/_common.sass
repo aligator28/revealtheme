@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6,
 	padding: 20px
 .wrap
 	display: inline-block
+	width: 100%
 	
 .page-content
 	margin-left: 2%
@@ -22,11 +23,18 @@ h1, h2, h3, h4, h5, h6,
 
 .reveal .playback
 	bottom: 20px !important
-.kama_breadcrumbs, .kama_breadcrumbs span
+
+.breadcrumbs
+	padding: 5%
+	color: $white;
+	background-image: url(../images/map_bg2.png);
+
+.kama_breadcrumbs, 
+.kama_breadcrumbs span
 	font-family: 'Oswald', sans-serif
 	font-size: 1.5rem
 .kama_breadcrumbs a span
-	color: #000000
+	color: $black
 	text-decoration: underline
 	transition: color .6s
 .kama_breadcrumbs a:hover span

@@ -136,8 +136,10 @@ function reveal_meta_boxes_slides( $meta_boxes ) {
 			array(
 				'name' => esc_html__( 'Or insert external source video code (Youtube, Vimeo, etc.)', 'poa-presentation-slides' ),
 				'id'   => $prefix . "external_video",
-				'type' => 'text',
-				'desc' => sprintf( wp_kses( __( 'Use embed code wich Video Hosting companies provide. For Youtube, read instructions <a href="%1s" target="_blank">HERE</a>, <br/>for Vimeo <a href="%3s" target="_blank">HERE</a>', 'poa-presentation-slides' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( 'https://support.google.com/youtube/answer/171780?hl=en' ), esc_url('https://help.vimeo.com/hc/en-us/articles/224969968-Embedding-videos-overview') )
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 3,
+				'desc' => sprintf( wp_kses( __( 'Use embed code wich Video Hosting companies provide. <br/>For Youtube, read instructions <a href="%1s" target="_blank">HERE</a>, <br/>for Vimeo <a href="%3s" target="_blank">HERE</a>', 'poa-presentation-slides' ), array(  'br' => array(), 'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( 'https://support.google.com/youtube/answer/171780?hl=en' ), esc_url('https://help.vimeo.com/hc/en-us/articles/224969968-Embedding-videos-overview') )
 			),
 			array(
 				'name' => esc_html__( 'Autoplay video?', 'poa-presentation-slides' ),

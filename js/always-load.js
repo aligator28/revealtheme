@@ -1,70 +1,89 @@
 ( function( $ ) {
 	"use strict";
 
-// var vasya = { 
-//  name: "Вася", 
-//  age: 23 
+
+// 12. У звіті зберігається інформація: найменування підприємства, 
+// прибуток підприємства за місяць, нарахування на зарплатню. Відсортувати цей звіт 
+// у порядку зменшення прибутку і вивести на екран інформацію з трьох найбільш прибуткових 
+// підприємств.
+
+// var block = document.createElement("div");
+// block.style.position = 'absolute';
+// block.style.zIndex = '999999';
+// block.style.background = 'red';
+// block.style.top = '50%';
+// block.style.left = '0';
+// block.style.width = '100%';
+// block.style.color = 'white';
+
+// var roga = { 
+//  name: "Рога и копыта", 
+//  income: 2300,
+//  salary: 50
 //  };
-// var masha = { 
-//  name: "Маша",
-//  age: 18 
+//  var kopyta = { 
+//  name: "Копыта", 
+//  income: 3065,
+//  salary: 70 
 //  };
-// var vovochka = { 
-//  name: "Вовочка",
-//  age: 6 
+// var styl = { 
+//  name: "Стулья вечером",
+//  income: 200300,
+//  salary: 3500
+//  };
+// var money = { 
+//  name: "Деньги утром",
+//  income: 100500,
+//  salary: 1500
+//  };
+// var money2 = { 
+//  name: "Cheese",
+//  income: 100,
+//  salary: 15
 //  };
 
-// var people = [ vasya , masha , vovochka ];
+// var enterprise = [ roga, kopyta, styl, money ];
 
 // // функция для сортировки по возрастанию
-// function acsSort(a, b) {
-//   return parseInt(a.age, 10) - parseInt(b.age, 10);
+// function ascSort(a, b) {
+//   return parseInt(a.income, 10) - parseInt(b.income, 10);
 // }
 // // функция для сортировки по убыванию
 // function descSort(a, b) {
-//   return parseInt(b.age, 10) - parseInt(a.age, 10);
+//   return parseInt(b.income, 10) - parseInt(a.income, 10);
 // }
 
 // // сортируем по убыванию
-// people.sort(descSort);
+// enterprise.sort(descSort);
 
+
+// var t = '';
+// var text = '';
 // // просто выводим понятные сообщения
-// console.log('Сортировка по убыванию');
-// for (var i = 0; i < people.length; i++) {
-// 	console.log(people[i].name + ' - ' + people[i].age);
+// console.log('Сортировка по убыванию (тройка лидеров)');
+// for (var i = 0; i < enterprise.length; i++) {
+// 	if (i > 2) break;
+	
+//   	// console.log(enterprise[i].name + ' - ' + enterprise[i].income);
+// 	text = document.createTextNode(enterprise[i].name + ' - ' + enterprise[i].income);       // Create a text node
+// 	block.appendChild(text);
+// 	var p = document.createElement("br");
+// 	block.appendChild(p);
 // }
+// document.body.appendChild(block);   
 
 // // сортируем по возрастанию
-// people.sort(acsSort);
+// enterprise.sort(ascSort);
 // // просто выводим понятные сообщения
-// console.log('Сортировка по возрастанию');
-// for (var i = 0; i < people.length; i++) {
-// 	console.log(people[i].name + ' - ' + people[i].age);
+// console.log('Сортировка по возрастанию (все предприятия)');
+// for (var i = 0; i < enterprise.length; i++) {
+//   console.log(enterprise[i].name + ' - ' + enterprise[i].income);
 // }
 
 
 
-// function compaireNum(a,b) {
-//  return a - b;
-// }
-
-// var hum = [];
-// var counter = [];
 
 
-// function sortPeople (arr) {
-//  for(var i = 0; i < people.length; i++) {
-//   hum[i] = people[i].age;
-//   counter = i;
-//  }
-//  hum.sort(compaireNum);
-// }
-// function newPeople(arr) {
-//  while (counter == 3) {
-//   people[i] = [counter];
-//  }
-//  console.log(people);
-// }
 
 
 

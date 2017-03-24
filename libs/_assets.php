@@ -51,7 +51,7 @@ if (
 	&& !is_home()
 	&& is_front_page()
 	|| get_post_type() == 'slides'
-	|| is_category()
+	|| check_if_has_categories_for_slides()
 	) :
 
 	// reveal.js styles

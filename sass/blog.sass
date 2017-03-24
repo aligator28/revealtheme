@@ -1,4 +1,4 @@
-@import 'variables'
+@import 'variables', 'mixins'
 
 .blog-header
 	height: 100vh
@@ -19,12 +19,23 @@
 a
 	// color: $orange //customizer.php
 .wrap-blog
-	padding: 2%
+	padding: 0
 	float: left
 	width: 100%
 	.page-title
 		text-align: center
-		font-size: 2em
+		font-size: 4rem
+	.entry-title:not(.page-title)
+		&:after
+			content: ""
+	#primary
+		padding: 0
+	.page-header
+		border-top-color: transparent
+		margin: 10% 0 
+	//.entry-date
+		// color: $orange // customizer.php
+
 .sidebar
 	padding: 2%
 	margin-top: 9%
@@ -48,36 +59,84 @@ a
 		background:
 			color: $white
 			size: cover
-		width: 25%
-		margin-bottom: 3%
-		padding: 5%
+		width: 33.33%
+		height: 50vh
+		margin: 0
+		padding: 6% 2%
 		z-index: 2
-		border-bottom: 10px solid rgba(255,25,255,.3)
-		border-radius: 5px
-		&:nth-child(4n)
-			border-bottom-color: #ECB50C
-			width: 40%
+		transition: all .8s
+		&:nth-child(5n)
+			width: 66.66%
 		&:last-child
 			margin-bottom: 3%
 		&:after
 			content: ""
 			display: block
 			position: absolute
+			background:
+				image: url('../images/bg_trans.png')
+				size: cover
+				repeat: no-repeat
+				// color: rgba(255, 75, 20, .5)
 			top: 0
 			left: 0
 			right: 0
 			bottom: 0
-			background-color: rgba(255, 75, 20, .5)
-			border-radius: 5px
 			z-index: -1
 			transition: top .6s
 		&:nth-child(2n)
+			&:hover
+				background-color: rgba(255,75,20,.1)
 			&:after
-				background-color: rgba(255,255,255, .2)
-		&:last-child:after
-			background-color: rgba(255, 75, 20, .5)
+				background:
+					image: url('../images/bg_trans_or.png')
 		&:hover:after
 			top: 100%
+		.entry-title a
+			color: $white
+			transition: color .6s
+		&:hover
+			background-color: rgba(0,0,0,.9)
+			// .entry-title a //customizer.php
+				// color: $grey
+			.icofont-tack-pin
+				color: $white
+		.entry-meta
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 100%
+			padding: 5px 15px
+			text-align: right
+			background-color: rgba(255,75,20,.7)
+			.entry-date
+				color: $white
+			    font-family: Oswald,sans-serif
+		&:nth-child(2n) .entry-meta
+			background-color: rgba(169, 162, 15, 0.7)
+		.entry-header
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			.entry-title
+				width: 100%
+				height: 100%
+				a
+					position: absolute
+					left: 0
+					width: 100%
+					height: 100%
+					span
+						position: absolute
+						+center(50%, 50%)
+						font-family: Oswald,sans-serif
+
+
+
+
+
 
 
 
@@ -85,14 +144,25 @@ a
 .search-submit:before
 	content: "\f002"
 	font-family: FontAwesome
-.page-header
-	border-top-color: transparent
-.entry-date
-	// color: $orange // customizer.php
 
-.sticky .entry-title
-	&:after
+	
+.sticky
+	.entry-title
+		padding: 2%
+		&:after
 		color: $black
+		a
+			color: $white
+			transition: all .6s
+		a:hover
+			color: $light-grey
+	.icofont-tack-pin
+		font-size: 3rem
+		position: absolute
+		top: 5px
+		left: 0
+
+
 .entry-title
 	z-index: 0
 	font-size: 1.5em
@@ -101,11 +171,11 @@ a
 		position: absolute
 		content: "\eb31"
 		font-family: icofont
-		top: 20%
+		top: 50%
 		left: 50%
 		transform: translate(-50%,-50%)
 		color: #EFEFEF
-		font-size: 9em
+		font-size: 25vw
 		z-index: -1
 	a
 		font-family: 'Oswald', sans-serif
@@ -136,19 +206,6 @@ body:not(.search-results) article:not(.type-page) .entry-content
 	.entry-content-bg
 		transform: rotate(2.1deg)
 		background-color: $black
-
-.sticky
-	.entry-title
-		background-color: $orange
-		padding: 2%
-		a
-			color: $white
-			transition: all .6s
-		a:hover
-			color: $light-grey
-	.icofont-tack-pin
-		font-size: 3rem
-
 
 .post-thumbnail
 	width: 150px
@@ -195,3 +252,30 @@ body:not(.search-results) article:not(.type-page) .entry-content
 	content: "\f141"
 	font-family: FontAwesome
 
+/************************* single post ****************************/
+.site-main-single
+	display: block
+.site-main article.post.reveal-single
+	width: 100%
+	height: 100%
+	.entry-header
+		position: relative
+		.entry-title
+			margin-bottom: 5%
+			// color: $orange customizer.php
+			&:after
+				color: $black
+	.entry-content
+		float: none
+		width: 100%
+		margin: 0
+/************************* single post ends ****************************/
+
+
+/************************* categories list ****************************/
+.category-desc
+	padding: 0 50px
+/************************* categories list ends ****************************/
+
+
+@import 'media'

@@ -34,32 +34,57 @@ if ( !empty(rwmb_meta( 'reveal_background_video' )) ) :
 endif;
 
 $embed_src = '';
-if ( !empty(rwmb_meta('reveal_external_video')) ) {
+if ( !empty(rwmb_meta('reveal_external_video')) ) :
 
-	$embed_src = reveal_getFrameSrc( rwmb_meta('reveal_external_video') );
-}
+	$embed_src = getFrameSrc( rwmb_meta('reveal_external_video') );
+
+endif;
 
 $autoplay = '';
-if ( !empty(rwmb_meta('reveal_autoplay_video')) && rwmb_meta('reveal_autoplay_video') == '1' ) {
-	$autoplay = '&autoplay=1';
-}
+$data_autoplay = '';
+if ( !empty(rwmb_meta('reveal_autoplay_video')) && rwmb_meta('reveal_autoplay_video') == '1' ) :
+	$autoplay = '&enablejsapi=1';
+	$data_autoplay = 'data-autoplay="1"';
+	// see front.js where autoplay option added
+endif;
 
 ?>
 
-<section class="section" <?php echo "id='section" . $counter . "' "; ?> <?php reveal_posts_attrs($counter); ?> <?php // if ($video_bg) : echo 'data-background-video="' . $video_bg . '"'; endif; ?> data-background-video-muted="true"> 
-	<h2 style="display: none"><?php echo __('Title', 'revealpresentation') ?></h2>
 
-<?php /* data-background-video-loop="true" */ ?>
+<section class="section" <?php echo "id='section" . $slides_loop->post->ID . "' "; ?> <?php reveal_posts_attrs($counter); ?> <?php //if ($video_bg != '') : echo 'data-background-video="' . $video_bg . '"'; endif; ?> >
+ <!-- data-background-video-muted="true" -->
+	<h2 style="display: none"><?php echo esc_html(get_the_title()); ?></h2>
+
 	<?php if ($embed_src != '') : ?>
-		<iframe src="<?php echo $embed_src. $autoplay; ?>" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>
+		<iframe class="iframe" id="iframe-section<?php echo  $slides_loop->post->ID; ?>" src="<?php echo $embed_src . $autoplay; ?>" <?php echo $data_autoplay; ?> frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>
 	<?php endif; ?>
 
 	<?php if ($video_bg != '') : ?>
-		<video id="fullscreen-video" class="fullscreen-video slides-video stretch" <?php if ($autoplay == '&autoplay=1') : ?>autoplay='true'<?php endif; ?>>
+		<video id="fullscreen-video-section<?php echo  $slides_loop->post->ID; ?>" class="fullscreen-video slides-video stretch" <?php if ($autoplay == '&autoplay=1') : ?>autoplay='true'<?php endif; ?> muted>
 		<?php //poster="<?php echo get_template_directory_uri(); /images/macbook.jpeg" ?>
 			<source data-src="<?php echo esc_html($video_bg); ?>" type="video/mp4"></source>
 		</video>
 	<?php endif;  ?>
+
 	<?php if ($notes) : ?><aside class="notes"><?php echo $notes; ?></aside><?php endif; ?>
 	<?php the_content( '', get_the_title() ); ?>
 </section>
+
+
+<!-- <section class="section" <?php //echo "id='section" . $counter . "' "; ?> <?php //reveal_posts_attrs($counter); ?> <?php // if ($video_bg) : echo 'data-background-video="' . $video_bg . '"'; endif; ?> data-background-video-muted="true"> 
+	<h2 style="display: none"><?php //echo __('Title', 'revealpresentation') ?></h2>
+
+<?php /* data-background-video-loop="true" */ ?>
+	<?php //if ($embed_src != '') : ?>
+		<iframe src="<?php //echo $embed_src. $autoplay; ?>" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>
+	<?php //endif; ?>
+
+	<?php //if ($video_bg != '') : ?>
+		<video id="fullscreen-video" class="fullscreen-video slides-video stretch" <?php //if ($autoplay == '&autoplay=1') : ?>autoplay='true'<?php //endif; ?>>
+		<?php //poster="<?php echo get_template_directory_uri(); /images/macbook.jpeg" ?>
+			<source data-src="<?php //echo esc_html($video_bg); ?>" type="video/mp4"></source>
+		</video>
+	<?php //endif;  ?>
+	<?php //if ($notes) : ?><aside class="notes"><?php echo $notes; ?></aside><?php //endif; ?>
+	<?php //the_content( '', get_the_title() ); ?>
+</section> -->

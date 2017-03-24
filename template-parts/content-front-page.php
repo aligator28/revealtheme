@@ -29,13 +29,13 @@
 	<?php endif; ?>
 
 		<?php 
-			$video_title = !empty(rwmb_meta( 'reveal_front_video_title' )) ? esc_html( rwmb_meta( 'reveal_front_video_title' ) ) :  esc_html__( 'Don\'t waste your time, just use "Our Awesome Product"', 'revealpresentation' );
+			$video_title = !empty(rwmb_meta( 'reveal_front_video_title' )) ? esc_html( rwmb_meta( 'reveal_front_video_title' ) ) :  '';
 		?>
 		<h1 class="video-title"><?php echo $video_title ?></h1>
 
 
 		<?php
-			$video_bloquote = !empty(rwmb_meta( 'reveal_front_video_blockquote' )) ? esc_html( rwmb_meta( 'reveal_front_video_blockquote' ) ) : esc_html__( 'Any of your business presentation idea, marketing advertizing and tutorial slides are possible', 'revealpresentation' );
+			$video_bloquote = !empty(rwmb_meta( 'reveal_front_video_blockquote' )) ? esc_html( rwmb_meta( 'reveal_front_video_blockquote' ) ) : '';
 		?>
 
 		<blockquote class="video-blockquote"><?php echo $video_bloquote ?></blockquote>
